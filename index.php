@@ -55,8 +55,19 @@ if (isset($_SESSION["fichasMostradas"])) {
     }
     if ($fichasMostradas[0] -> getPuzle() == $fichasMostradas[1] -> getPuzle() && $fichasMostradas[1] -> getPuzle() == $fichasMostradas[2] -> getPuzle()) {
         echo "<h1>Enhorabuena, has ganado</h1>";
-    }
-        echo "<div style=\"width:100%; display: inline-block;\"><div style=\"width:20%; margin:.1%; display: inline-block;\"><img src=\"".$fichasMostradas[0] -> getImagen()."\" alt=\"Primera Ficha\">";
+        echo "<div style=\"width:1250px; display: inline-block;\"><div style=\"width:20%; margin:.1%; display: inline-block;\"><img src=\"".$fichasMostradas[0] -> getImagen()."\" alt=\"Primera Ficha\">";
+        echo "<form action=\"index.php\" method=\"post\">
+        </form></div>";
+
+        echo "<div style=\"width:20%; margin:.1%; display: inline-block;\"><img src=\"".$fichasMostradas[1] -> getImagen()."\" alt=\"Segunda Ficha\">";
+        echo "<form action=\"index.php\" method=\"post\">
+        </form></div>"; 
+
+        echo "<div style=\"width:20%; margin:.1%; display: inline-block;\"><img src=\"".$fichasMostradas[2] -> getImagen()."\" alt=\"Tercera Ficha\">";
+        echo "<form action=\"index.php\" method=\"post\">
+        </form></div></div>";
+    }else{
+        echo "<div style=\"width:1250px; display: inline-block;\"><div style=\"width:20%; margin:.1%; display: inline-block;\"><img src=\"".$fichasMostradas[0] -> getImagen()."\" alt=\"Primera Ficha\">";
         echo "<form action=\"index.php\" method=\"post\">
         <input style=\"width:100%\" type=\"submit\" name=\"cambiar1\" value=\"Siguiente Ficha\">
         </form></div>";
@@ -70,6 +81,9 @@ if (isset($_SESSION["fichasMostradas"])) {
         echo "<form action=\"index.php\" method=\"post\">
         <input style=\"width:100%\" type=\"submit\" name=\"cambiar3\" value=\"Siguiente Ficha\">
         </form></div></div>";
-
+    }
     }
 echo "<br><a href='cierraSesiones.php'>Reiniciar</a><br>";
+
+echo "<br><a href='https://github.com/RafaelUrbanoEstepa/Puzle-infantil-PHP'>Enlace a GitHub</a><br>";
+
